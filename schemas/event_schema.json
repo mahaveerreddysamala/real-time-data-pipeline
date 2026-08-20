@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TransactionEvent",
+  "type": "object",
+  "required": ["event_id", "customer_id", "event_type", "amount", "event_time"],
+  "properties": {
+    "event_id": {"type": "string"},
+    "customer_id": {"type": "string"},
+    "event_type": {"enum": ["purchase", "refund", "login"]},
+    "amount": {"type": "number", "minimum": 0},
+    "event_time": {"type": "string", "format": "date-time"}
+  }
+}
